@@ -22,4 +22,9 @@ export const Button = styled.button`
     cursor: not-allowed;
     opacity: 0.5;
   }
+
+  @media screen and (max-width: 700px) {
+    padding: 0;
+    min-width: auto;
+  }
 `;

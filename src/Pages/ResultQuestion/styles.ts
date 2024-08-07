@@ -14,10 +14,14 @@ export const Container = styled.div`
   p {
     margin: 1rem 0;
   }
+`;
 
-  div {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+export const ContainerButton = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
   }
 `;

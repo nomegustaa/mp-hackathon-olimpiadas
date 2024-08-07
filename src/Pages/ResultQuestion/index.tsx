@@ -37,13 +37,13 @@ const ResultQuestion = () => {
           <p>Parabéns {name || 'Estranho'}</p>
           <p>Você acertou {getResultResponse().length} de 10</p>
 
-          <div>
+          <S.ContainerButton>
             <Button
               value="Jogar novamente"
               onClick={() => restartQuiz('/question')}
             />
             <Button value="Voltar para home" onClick={() => restartQuiz('/')} />
-          </div>
+          </S.ContainerButton>
         </S.Container>
       </Box>
     </>
