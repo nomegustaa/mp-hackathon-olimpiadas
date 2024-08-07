@@ -7,7 +7,7 @@ import * as S from './styles';
 const Routes = () => {
   return (
     <S.Container>
-      <BrowserRouter>
+      <BrowserRouter basename="/quiz-olimpico">
         <RouteDom>
           <Route path="/" element={<Home />} />
           <Route path="/question" element={<Questions />} />
