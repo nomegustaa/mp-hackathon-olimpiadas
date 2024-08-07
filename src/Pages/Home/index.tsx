@@ -20,8 +20,6 @@ const Home = () => {
     }
   };
 
-  console.log(userName, name);
-
   return (
     <S.Container>
       <Icons />

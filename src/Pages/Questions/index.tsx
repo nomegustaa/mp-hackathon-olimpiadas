@@ -83,9 +83,9 @@ const Questions = () => {
   }, [countries]);
 
   useEffect(() => {
-    // if (timeRemaining <= 0) {
-    //   nextQuestion();
-    // }
+    if (timeRemaining <= 0) {
+      nextQuestion();
+    }
   }, [timeRemaining]);
 
   useEffect(() => {

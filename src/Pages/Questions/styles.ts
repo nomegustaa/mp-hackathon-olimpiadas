@@ -5,6 +5,7 @@ export const ContainerQuiz = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  row-gap: 1rem;
 
   @media screen and (max-width: 1100px) {
     margin: 1rem 0 0 0;
@@ -17,7 +18,7 @@ export const ContainerQuizMobile = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  height: 8.125rem;
+  height: 5.125rem;
   @media screen and (max-width: 1100px) {
     flex-direction: row;
     justify-content: space-between;
@@ -98,7 +99,7 @@ export const ContainerAlternatives = styled(ContainerQuiz)`
 export const AlternativesAmount = styled.p`
   color: ${(props) => props.theme['grey-1']};
   font-size: 0.875rem;
-  margin: 4rem 0 1rem 0;
+  margin: 1rem;
   span {
     font-weight: bold;
     font-size: 1.25rem;
@@ -106,7 +107,7 @@ export const AlternativesAmount = styled.p`
 `;
 
 export const NextQuestion = styled(ContainerQuiz)`
-  margin: 4rem 0 1rem 0;
+  margin: 1rem;
   align-items: center;
   padding: 0.75rem;
   cursor: pointer;
