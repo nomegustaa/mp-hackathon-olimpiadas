@@ -28,7 +28,10 @@ const Questions = () => {
   const getCountries = async () => {
     setRequest('loading');
     try {
-      setRequest('success');
+      await new Promise<void>((resolve) => {
+        setTimeout(() => resolve(), 1000);
+      });
+
       const page = Math.floor(Math.random() * 4) + 1;
 
       const response = await api.get('countries', {
@@ -45,6 +48,7 @@ const Questions = () => {
 
       setCountries(newQuestions);
       setCountrie(newQuestions[countrie]);
+      setRequest('success');
     } catch (e) {
       setRequest('error');
       console.log(e);
@@ -129,19 +133,21 @@ const Questions = () => {
             </S.ContainerImage>
           )}
 
-          <S.ContainerQuiz>
-            {shuffledArray.map((item) => {
-              return (
-                <S.ContainerAlternatives
-                  className={selected.includes(item.id) ? 'active' : ''}
-                  key={item.id}
-                  onClick={() => setSelected(item.id)}
-                >
-                  <p>{item.name}</p>
-                </S.ContainerAlternatives>
-              );
-            })}
-          </S.ContainerQuiz>
+          {request === 'success' && countrie && (
+            <S.ContainerQuiz>
+              {shuffledArray.map((item) => {
+                return (
+                  <S.ContainerAlternatives
+                    className={selected.includes(item.id) ? 'active' : ''}
+                    key={item.id}
+                    onClick={() => setSelected(item.id)}
+                  >
+                    <p>{item.name}</p>
+                  </S.ContainerAlternatives>
+                );
+              })}
+            </S.ContainerQuiz>
+          )}
 
           <S.ContainerQuizMobile>
             <S.AlternativesAmount>
